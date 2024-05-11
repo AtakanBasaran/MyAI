@@ -8,17 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		BBC2F6BF2BF006F800B4D080 /* MyAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2F6BE2BF006F800B4D080 /* MyAIApp.swift */; };
-		BBC2F6C12BF006F800B4D080 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2F6C02BF006F800B4D080 /* ContentView.swift */; };
+		BBC2F6C12BF006F800B4D080 /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2F6C02BF006F800B4D080 /* SignView.swift */; };
 		BBC2F6C32BF006FA00B4D080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBC2F6C22BF006FA00B4D080 /* Assets.xcassets */; };
 		BBC2F6C62BF006FA00B4D080 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBC2F6C52BF006FA00B4D080 /* Preview Assets.xcassets */; };
+		BBC2F6CE2BF0072100B4D080 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = BBC2F6CD2BF0072100B4D080 /* OpenAI */; };
+		BBC2F6D12BF0076100B4D080 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BBC2F6D02BF0076100B4D080 /* FirebaseAuth */; };
+		BBC2F6D32BF0076100B4D080 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BBC2F6D22BF0076100B4D080 /* FirebaseFirestore */; };
+		BBC2F6D62BF0081100B4D080 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2F6D52BF0081100B4D080 /* DataModel.swift */; };
+		BBC2F6DB2BF0085A00B4D080 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2F6DA2BF0085A00B4D080 /* ViewModel.swift */; };
+		BBC2F6DE2BF008C600B4D080 /* ChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2F6DD2BF008C600B4D080 /* ChatBotView.swift */; };
+		BBC2F6E02BF008E700B4D080 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2F6DF2BF008E700B4D080 /* Messages.swift */; };
+		BBC2F6E32BF0090C00B4D080 /* BarTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2F6E22BF0090C00B4D080 /* BarTitle.swift */; };
+		BBC2F6E52BF0092700B4D080 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2F6E42BF0092700B4D080 /* MenuView.swift */; };
+		BBC2F6E92BF0106100B4D080 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBC2F6E82BF0106100B4D080 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BBC2F6BB2BF006F800B4D080 /* MyAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBC2F6BE2BF006F800B4D080 /* MyAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAIApp.swift; sourceTree = "<group>"; };
-		BBC2F6C02BF006F800B4D080 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BBC2F6C02BF006F800B4D080 /* SignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignView.swift; sourceTree = "<group>"; };
 		BBC2F6C22BF006FA00B4D080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBC2F6C52BF006FA00B4D080 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BBC2F6D52BF0081100B4D080 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		BBC2F6DA2BF0085A00B4D080 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		BBC2F6DD2BF008C600B4D080 /* ChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotView.swift; sourceTree = "<group>"; };
+		BBC2F6DF2BF008E700B4D080 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		BBC2F6E22BF0090C00B4D080 /* BarTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarTitle.swift; sourceTree = "<group>"; };
+		BBC2F6E42BF0092700B4D080 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		BBC2F6E82BF0106100B4D080 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +43,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBC2F6CE2BF0072100B4D080 /* OpenAI in Frameworks */,
+				BBC2F6D12BF0076100B4D080 /* FirebaseAuth in Frameworks */,
+				BBC2F6D32BF0076100B4D080 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +72,14 @@
 			isa = PBXGroup;
 			children = (
 				BBC2F6BE2BF006F800B4D080 /* MyAIApp.swift */,
-				BBC2F6C02BF006F800B4D080 /* ContentView.swift */,
+				BBC2F6D42BF007F800B4D080 /* Model */,
+				BBC2F6D82BF0083500B4D080 /* ViewModel */,
+				BBC2F6D92BF0084000B4D080 /* Views */,
+				BBC2F6C02BF006F800B4D080 /* SignView.swift */,
+				BBC2F6DC2BF008B600B4D080 /* Chat */,
+				BBC2F6E12BF008F700B4D080 /* Other */,
 				BBC2F6C22BF006FA00B4D080 /* Assets.xcassets */,
+				BBC2F6E82BF0106100B4D080 /* GoogleService-Info.plist */,
 				BBC2F6C42BF006FA00B4D080 /* Preview Content */,
 			);
 			path = MyAI;
@@ -65,6 +91,47 @@
 				BBC2F6C52BF006FA00B4D080 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BBC2F6D42BF007F800B4D080 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BBC2F6D52BF0081100B4D080 /* DataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BBC2F6D82BF0083500B4D080 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BBC2F6DA2BF0085A00B4D080 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BBC2F6D92BF0084000B4D080 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BBC2F6DC2BF008B600B4D080 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				BBC2F6DD2BF008C600B4D080 /* ChatBotView.swift */,
+				BBC2F6DF2BF008E700B4D080 /* Messages.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		BBC2F6E12BF008F700B4D080 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				BBC2F6E22BF0090C00B4D080 /* BarTitle.swift */,
+				BBC2F6E42BF0092700B4D080 /* MenuView.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +150,11 @@
 			dependencies = (
 			);
 			name = MyAI;
+			packageProductDependencies = (
+				BBC2F6CD2BF0072100B4D080 /* OpenAI */,
+				BBC2F6D02BF0076100B4D080 /* FirebaseAuth */,
+				BBC2F6D22BF0076100B4D080 /* FirebaseFirestore */,
+			);
 			productName = MyAI;
 			productReference = BBC2F6BB2BF006F800B4D080 /* MyAI.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +183,10 @@
 				Base,
 			);
 			mainGroup = BBC2F6B22BF006F800B4D080;
+			packageReferences = (
+				BBC2F6CC2BF0072100B4D080 /* XCRemoteSwiftPackageReference "OpenAI" */,
+				BBC2F6CF2BF0076100B4D080 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = BBC2F6BC2BF006F800B4D080 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +203,7 @@
 			files = (
 				BBC2F6C62BF006FA00B4D080 /* Preview Assets.xcassets in Resources */,
 				BBC2F6C32BF006FA00B4D080 /* Assets.xcassets in Resources */,
+				BBC2F6E92BF0106100B4D080 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +214,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBC2F6C12BF006F800B4D080 /* ContentView.swift in Sources */,
+				BBC2F6C12BF006F800B4D080 /* SignView.swift in Sources */,
+				BBC2F6E52BF0092700B4D080 /* MenuView.swift in Sources */,
+				BBC2F6E02BF008E700B4D080 /* Messages.swift in Sources */,
+				BBC2F6DE2BF008C600B4D080 /* ChatBotView.swift in Sources */,
+				BBC2F6E32BF0090C00B4D080 /* BarTitle.swift in Sources */,
 				BBC2F6BF2BF006F800B4D080 /* MyAIApp.swift in Sources */,
+				BBC2F6DB2BF0085A00B4D080 /* ViewModel.swift in Sources */,
+				BBC2F6D62BF0081100B4D080 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +280,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -254,7 +337,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -275,6 +358,8 @@
 				DEVELOPMENT_TEAM = 27JCDAS664;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MyAI;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access to your photo library is required to save photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +389,8 @@
 				DEVELOPMENT_TEAM = 27JCDAS664;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MyAI;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access to your photo library is required to save photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -344,6 +431,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BBC2F6CC2BF0072100B4D080 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MacPaw/OpenAI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.8;
+			};
+		};
+		BBC2F6CF2BF0076100B4D080 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.25.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BBC2F6CD2BF0072100B4D080 /* OpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBC2F6CC2BF0072100B4D080 /* XCRemoteSwiftPackageReference "OpenAI" */;
+			productName = OpenAI;
+		};
+		BBC2F6D02BF0076100B4D080 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBC2F6CF2BF0076100B4D080 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		BBC2F6D22BF0076100B4D080 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBC2F6CF2BF0076100B4D080 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BBC2F6B32BF006F800B4D080 /* Project object */;
 }
