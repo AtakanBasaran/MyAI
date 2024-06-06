@@ -44,10 +44,11 @@ final class ViewModel: ObservableObject {
     @Published var rightMenuAnimate = false
     @Published var loadingImage = false
     
-
+    
     
     let fireStoreDataBase = Firestore.firestore()
     private var documentID = ""
+    
     
     
     //MARK: - AI features
@@ -65,7 +66,7 @@ final class ViewModel: ObservableObject {
     
     func getReply() {
         
-        let query = ChatQuery(messages: self.messages.map{.init(role: .user, content: $0.content)!}, model: .gpt3_5Turbo)
+        let query = ChatQuery(messages: self.messages.map{.init(role: .user, content: $0.content)!}, model: .gpt4)
         
         openAI.chats(query: query) { result in
             
@@ -104,7 +105,7 @@ final class ViewModel: ObservableObject {
                         self.urlImage = url
                         self.loadingImage = false
                     }
-                   
+                    
                 }
                 
             case .failure(let error):
@@ -117,8 +118,11 @@ final class ViewModel: ObservableObject {
         }
     }
     
-    //MARK: - Sign methods
-    
+}
+
+//MARK: - Sign methods
+
+extension ViewModel {
     
     func createUser(email: String, password: String) {
         
@@ -171,49 +175,11 @@ final class ViewModel: ObservableObject {
             }
         }
     }
-    
-    //MARK: - Saving image to library
-    
-    
-    func saveImage(urlString: String) {
-        
-        guard let url = URL(string: urlString) else {
-            print("url is empty")
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { data, _ , error in
-            
-            if let error {
-                print(error.localizedDescription)
-                self.errorDownloadImg = true
-            }
-            
-            if error == nil && data != nil {
-                
-                if let data {
-                    
-                    self.errorDownloadImg = false
-                    
-                    if let image = UIImage(data: data) {
-                        
-                        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-                        
-                        self.successDownloadImg = true
-                        
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                            self.successDownloadImg = false
-                        }
-                    }
-                }
-            }
-            
-            
-        }
-        .resume()
-    }
+}
     
     //MARK: - Firebase save methods
+
+extension ViewModel {
     
     func uploadConversations() {
         
@@ -255,48 +221,92 @@ final class ViewModel: ObservableObject {
             .addSnapshotListener { snapshot, error in
                 
                 
-            if let error  {
-                print(error.localizedDescription)
-            } else {
-                
-                if let snapshot {
+                if let error  {
+                    print(error.localizedDescription)
+                } else {
                     
-                    if snapshot.isEmpty == false  {
-                        self.messagesArray.removeAll(keepingCapacity: false)
-
+                    if let snapshot {
                         
-                        for document in snapshot.documents {
-                            self.documentID = document.documentID
+                        if snapshot.isEmpty == false  {
+                            self.messagesArray.removeAll(keepingCapacity: false)
                             
-                            if let conversations = document.get("Conversation") as? [[String:Any]] {
-                                for conversation in conversations {
-                                    
-                                    if let content = conversation["content"] as? String, let isUser = conversation["isUser"] as? Bool {
-                                        let message = Message(content: content, isUser: isUser)
+                            
+                            for document in snapshot.documents {
+                                self.documentID = document.documentID
+                                
+                                if let conversations = document.get("Conversation") as? [[String:Any]] {
+                                    for conversation in conversations {
                                         
-                                        DispatchQueue.main.async {
-                                            self.messages.append(message)
+                                        if let content = conversation["content"] as? String, let isUser = conversation["isUser"] as? Bool {
+                                            let message = Message(content: content, isUser: isUser)
+                                            
+                                            DispatchQueue.main.async {
+                                                self.messages.append(message)
+                                            }
                                         }
                                     }
+                                    
                                 }
-                                
                             }
-                        }
-                        
-                    } else {
-                        print("empty message array in firebase")
-                        DispatchQueue.main.async {
-                            self.messages = []
+                            
+                        } else {
+                            print("empty message array in firebase")
+                            DispatchQueue.main.async {
+                                self.messages = []
+                            }
                         }
                     }
                 }
             }
-        }
     }
     
-
-    
 }
+
+
+//MARK: - Saving image to library
+
+extension ViewModel {
+    
+    func saveImage(urlString: String) {
+        
+        guard let url = URL(string: urlString) else {
+            print("url is empty")
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, _ , error in
+            
+            if let error {
+                print(error.localizedDescription)
+                self.errorDownloadImg = true
+            }
+            
+            if error == nil && data != nil {
+                
+                if let data {
+                    
+                    self.errorDownloadImg = false
+                    
+                    if let image = UIImage(data: data) {
+                        
+                        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                        
+                        self.successDownloadImg = true
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            self.successDownloadImg = false
+                        }
+                    }
+                }
+            }
+            
+            
+        }
+        .resume()
+    }
+}
+    
+
 
 
 
